@@ -1,0 +1,27 @@
+.card-body, .card-titletext-center, .card-texttext-center, .btn btn-outline-dark d-flex justify-content-center {
+color: white;
+background-color:black;
+}
+
+
+.justify-content-center{
+  background-color:black
+}
+
+.btn-outline-info {
+  color: white
+}
+
+.btn{
+  border: 1px solid white
+  
+}
+
+.btn-outline-dark{
+ color: white
+}
+
+.text-center{
+  color: white
+}
+
