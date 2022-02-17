@@ -2,18 +2,16 @@
   <div class="row mt-5 mb-5">
     <div class="col-md-4">
       <div class="card border-0" style="width: 18rem;">
-        <div class="d-flex justify-content-center">
+        <div class="d justify-content-center">
           <img stylesheet="background-color: black;" src="./../../assets/perfil.jpg" class="card-img-top rounded-circle w-75" alt="Foto do usuário">
         </div>
         <div class="card-body">
           <h5 class="card-titletext-center">Ricardo Luis Machado</h5>
           <p class="card-texttext-center">Fullstack Developer</p>
           <a href="https://github.com/wolwerr" target="_blank"
-            class="btn btn-outline-dark d-flex justify-content-center">Github</a>
-            <a href="https://www.linkedin.com/in/ricardolmachado/" target="_blank" 
-            class="btn btn-outline-dark d-flex justify-content-center">Linkedin</a>
-
-          <hr class="mt-4 mb-4">
+          class="btn btn-outline-light d-flex justify-content-center">Github</a>
+          <a href="https://www.linkedin.com/in/ricardolmachado/" target="_blank"
+          class="btn btn-outline-light d-flex justify-content-center">Linkedin</a>
 
           <!--<h6 class="mb-3 text-monospace text-center">Pesquisar por nome</h6>
 
@@ -22,7 +20,7 @@
           -->
         </div>
       </div>
-    </div>
+      </div>
 
     <div class="col-md-8">
       <div>
@@ -39,7 +37,7 @@
             placeholder="Write your message" [(ngModel)]='post.mensagem'></textarea>
         </div>
         <div class="d-flex justify-content-end">
-          <button type="button" class="btn btn-outline-info w-25" (click)='cadastrarMensagem()'>Publish</button>
+          <button type="button" class="btn btn-outline-light w-25" (click)='cadastrarMensagem()'>Publish</button>
         </div>
 
       </div>

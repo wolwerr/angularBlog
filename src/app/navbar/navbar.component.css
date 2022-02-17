@@ -1,0 +1,13 @@
+.container, .navbarSupportedContent{
+  background-color: gray;
+}
+
+.nav-item:active{
+  color:red;
+}
+
+
+.navbar navbar-expand-lg navbar-light bg-light{
+  background-color: gray;
+}
+
