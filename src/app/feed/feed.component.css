@@ -1,14 +1,17 @@
 .card-body, .card-titletext-center, .card-texttext-center {
 color: white;
 background-color:black;
+
 }
 
 .justify-content-center::selection{
   background-color:black;
+
  }
 
 .d{
   background-color: black;
+  padding-left: 50px;
 }
 
 .text-center{
@@ -19,3 +22,6 @@ background-color:black;
  background-color: black;
 }
 
+.text-monospace{
+  color: white;
+}

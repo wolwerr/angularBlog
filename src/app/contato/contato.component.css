@@ -1,4 +1,4 @@
 
-.text-center mb-5 text-monospace{
+.text-center, .form-group, .mb-5 text-monospace{
   color: white;
 }
