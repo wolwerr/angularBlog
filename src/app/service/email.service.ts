@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Post } from '../model/Post';
+import { Email } from '../model/Email';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class EmailService {
 
   constructor(private http: HttpClient) { }
 
@@ -13,8 +13,8 @@ export class PostService {
     return this.http.get('http://localhost:3000/posts')
   }
 
-  postMensagem(post: Post) {
-    return this.http.post('http://localhost:8083/sending-email/', post)
+  enviarEmail(email: Email) {
+    return this.http.post('http://localhost:8083/sending-email/', email)
   }
 
 }
