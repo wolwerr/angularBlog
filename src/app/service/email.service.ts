@@ -9,12 +9,9 @@ export class EmailService {
 
   constructor(private http: HttpClient) { }
 
-  getPosts() {
-    return this.http.get('http://localhost:3000/posts')
-  }
 
   enviarEmail(email: Email) {
-    return this.http.post('http://localhost:8083/sending-email/', email)
+    return this.http.post('http://localhost:8081/sending-email/', email)
   }
 
 }
