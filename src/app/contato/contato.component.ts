@@ -24,7 +24,7 @@ export class ContatoComponent implements OnInit {
     this.emailService.enviarEmail(this.email)
     .subscribe(data => console.log(data, "E-mail sented"), error => console.log(error, "Something is wrong"));
       this.email = new Email();
-      location.assign('/contato')
+      
   }
 
 }
