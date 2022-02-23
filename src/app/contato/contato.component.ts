@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EmailService } from '../service/email.service';
 import { Email } from '../model/Email';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-contato',
@@ -19,10 +21,10 @@ export class ContatoComponent implements OnInit {
   }
 
   sendEmail() {
-    this.emailService.enviarEmail(this.email).subscribe((data: Email) => {
-      this.email = data
+    this.emailService.enviarEmail(this.email)
+    .subscribe(data => console.log(data, "E-mail sented"), error => console.log(error, "Something is wrong"));
+      this.email = new Email();
       location.assign('/contato')
-    })
   }
 
 }
