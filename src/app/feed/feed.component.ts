@@ -8,10 +8,10 @@ import { Post } from '../model/Post';
 })
 export class FeedComponent implements OnInit {
 
-  listPost: Post[];
-  post: Post = new Post;
+  posts: Post[];
+  post : Post;
   nome: string;
-
+  temp : any
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
@@ -19,16 +19,18 @@ export class FeedComponent implements OnInit {
   }
 
   findPosts() {
-    this.postService.getPosts().subscribe((data: Post[]) => {
-      this.listPost = data;
+    this.postService.getPosts().subscribe (data => {
+     this.temp = data['content'];
+     this.posts = this.temp
+
     })
   }
 
   cadastrarMensagem() {
-    this.postService.postMensagem(this.post).subscribe((data: Post) => {
+     this.postService.postMensagem(this.post).subscribe((data: Post) => {
       this.post = data
       location.assign('/feed')
-    })
+      })
   }
 
 }

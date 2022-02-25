@@ -29,12 +29,12 @@
         <div class="form-group">
           <label for="nome" class="text-monospace">Name:</label>
           <input type="text" name="name" id="name" class="form-control" placeholder="Write your name"
-            [(ngModel)]='post.name'>
+            >
         </div>
         <div class="form-group">
           <label for="mensagem" class="text-monospace">Messages:</label>
           <textarea name="message" id="message" cols="30" rows="4" class="form-control"
-            placeholder="Write your message" [(ngModel)]='post.message'></textarea>
+            placeholder="Write your message" ></textarea>
         </div>
         <div class="d-flex justify-content-end">
           <button type="button" class="btn btn-outline-light w-25" (click)='cadastrarMensagem()'>Publish</button>
@@ -45,16 +45,18 @@
 
       <h3 class="text-center mb-5 text-monospace">Coments</h3>
       <div class="container">
-        <div class="card mb-4" *ngFor="let post of listPost">
-          <div class="card-header">
-            <h5 class="card-tile">{{post.comentId}}</h5>
-          </div>
-          <div class="card-body">
-            <p class="card-text">{{post.name}}</p>
-            <p class="card-text">{{post.message}}</p>
-          </div>
+        <div class="card mb-4" *ngFor="let result of posts">
 
+          <div class="card-body">
+            <p class="card-text">{{ result.name }}</p>
+            <p class="card-text">{{ result.message }}</p>
+          </div>
         </div>
+        <h5 class="text-center mb-5 text-monospace">Páginas</h5>
+        <div class="container">
+          <div class="card mb-4" >
+
+            
       </div>
     </div>
   </div>

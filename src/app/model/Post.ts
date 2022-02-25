@@ -1,7 +1,9 @@
-export class Post{
+export interface Post{
 
-  public comentId: string;
-  public name: string
-  public message: string
+  comentId: string
+  name: string
+  message: string
+  sendDateComent: string
+  statusComent: string
 
 }
