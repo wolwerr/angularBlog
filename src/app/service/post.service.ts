@@ -9,12 +9,14 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
+  listPosts:any=[];
+
   getPosts() {
-    return this.http.get('http://localhost:3000/posts')
+    return this.http.get('https://backspacoment.herokuapp.com/coments')
   }
 
   postMensagem(post: Post) {
-    return this.http.post('http://localhost:8083/sending-email/', post)
+    return this.http.post('https://backspacoment.herokuapp.com/sending-coment', post)
   }
 
 }

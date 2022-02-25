@@ -10,7 +10,7 @@ export class EmailService {
 
   constructor(private http: HttpClient) { }
 
-private baseUrl = 'https://backendspa.herokuapp.com/sending-email';
+private baseUrl = 'https://backspaemail.herokuapp.com/sending-email';
 
 
 
