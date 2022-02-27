@@ -23,8 +23,8 @@ export class ContatoComponent implements OnInit {
   sendEmail() {
     this.emailService.enviarEmail(this.email)
     .subscribe(data => console.log(data, "E-mail sented"), error => console.log(error, "Something is wrong"));
+    alert("Email sented")
       this.email = new Email();
-      
   }
 
 }
