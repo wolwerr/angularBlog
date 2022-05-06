@@ -18,9 +18,7 @@ export class FeedComponent implements OnInit {
   });
 
   coments: Post[];
-  nome: string;
-
-
+  
   constructor(private postService: PostService, private router: Router) { }
 
 

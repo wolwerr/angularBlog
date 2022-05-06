@@ -25,16 +25,16 @@
 
     <div class="col-md-8">
       <div>
-        <h3 class="text-center mb-4 text-monospace">Digite abaixo os seus comentários:</h3>
+        <h3 class="text-center mb-4 text-monospace">Send your coment below:</h3>
 
         <form [formGroup]="postForm" class="register-form">
           <div class="form-field">
-          <label class="label-input">Nome:</label>
+          <label class="label-input">Name:</label>
           <input type="text" formControlName="name" id="nome" class="form-control" placeholder="Digite o seu nome"
           >
         </div>
         <div class="form-field">
-          <label class="label-input">Mensagem:</label>
+          <label class="label-input">Message:</label>
           <textarea name="mensagem" id="mensagem" cols="30" rows="4" class="form-control" formControlName="message"
             placeholder="Digite a sua mensagem"></textarea>
         </div>
@@ -45,15 +45,15 @@
 
       <hr class="mt-5 mb-5">
 
-      <h3 class="text-center mb-5 text-monospace">Comentários adicionados</h3>
+      <h3 class="text-center mb-5 text-monospace">Coments</h3>
       <div class="container">
         <div class="card mb-4" *ngFor="let coment of coments">
           <div class="card-header">
-            <h5 class="card-tile">{{coment.id}}</h5>
+            <h5 class="card-tile">Name: {{coment.name}}</h5>
           </div>
           <div class="card-body">
-            <p class="card-text">{{coment.name}}</p>
-            <p class="card-text">{{coment.message}}</p>
+            <p class="card-text">Coment: {{coment.message}}</p>
+            <p class="card-text">Send Date Coment: {{coment.sendDateComent}}</p>
           </div>
 
         </div>
