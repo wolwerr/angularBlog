@@ -1,9 +1,9 @@
 export interface Post{
 
-  comentId: string
+  comentId?: number;
   name: string
   message: string
-  sendDateComent: string
-  statusComent: string
+  sendDateComent?: string
+  statusComent?: string
 
 }

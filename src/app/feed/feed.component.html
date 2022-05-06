@@ -2,8 +2,8 @@
   <div class="row mt-5 mb-5">
     <div class="col-md-4">
       <div class="card border-0" style="width: 18rem;">
-        <div class="d justify-content-center">
-          <img stylesheet="background-color: black;" src="./../../assets/perfil.jpg" class="card-img-top rounded-circle w-75" alt="Foto do usuário">
+        <div class="d-flex justify-content-center">
+          <img src="./../../assets/perfil.jpg" class="card-img-top rounded-circle w-75" alt="Foto do usuário">
         </div>
         <div class="card-body">
           <h5 class="card-titletext-center">Ricardo Luis Machado</h5>
@@ -13,51 +13,51 @@
           <a href="https://www.linkedin.com/in/ricardolmachado/" target="_blank"
           class="btn btn-outline-light d-flex justify-content-center mt-3">Linkedin</a>
 
-          <!--<h6 class="mb-3 text-monospace text-center">Pesquisar por nome</h6>
+          <hr class="mt-4 mb-4">
+
+          <h6 class="mb-3 text-monospace text-center">Pesquisar por nome</h6>
 
           <input type="text" class="form-control mb-3 w-100">
-          <button class="btn btn-outline-warning w-100">Pesquisar</button>
-          -->
+          <button class="btn btn-outline-light w-100">Pesquisar</button>
         </div>
       </div>
-      </div>
+    </div>
 
     <div class="col-md-8">
       <div>
-        <h3 class="text-center mb-4 text-monospace">Write your coments:</h3>
+        <h3 class="text-center mb-4 text-monospace">Digite abaixo os seus comentários:</h3>
 
-        <div class="form-group">
-          <label for="nome" class="text-monospace">Name:</label>
-          <input type="text" name="name" id="name" class="form-control" placeholder="Write your name"
-            >
+        <form [formGroup]="postForm" class="register-form">
+          <div class="form-field">
+          <label class="label-input">Nome:</label>
+          <input type="text" formControlName="name" id="nome" class="form-control" placeholder="Digite o seu nome"
+          >
         </div>
-        <div class="form-group">
-          <label for="mensagem" class="text-monospace">Messages:</label>
-          <textarea name="message" id="message" cols="30" rows="4" class="form-control"
-            placeholder="Write your message" ></textarea>
+        <div class="form-field">
+          <label class="label-input">Mensagem:</label>
+          <textarea name="mensagem" id="mensagem" cols="30" rows="4" class="form-control" formControlName="message"
+            placeholder="Digite a sua mensagem"></textarea>
         </div>
         <div class="d-flex justify-content-end">
-          <button type="button" class="btn btn-outline-light w-25" (click)='cadastrarMensagem()'>Publish</button>
+          <button type="submit" class="cadastrarPost" class="btn btn-outline-light w-50" (click)="onSubmit()">Publicar</button>
         </div>
 
-      </div>
+
       <hr class="mt-5 mb-5">
 
-      <h3 class="text-center mb-5 text-monospace">Coments</h3>
+      <h3 class="text-center mb-5 text-monospace">Comentários adicionados</h3>
       <div class="container">
-        <div class="card mb-4" *ngFor="let result of posts">
-
-          <div class="card-body">
-            <p class="card-text">{{ result.name }}</p>
-            <p class="card-text">{{ result.message }}</p>
+        <div class="card mb-4" *ngFor="let coment of coments">
+          <div class="card-header">
+            <h5 class="card-tile">{{coment.id}}</h5>
           </div>
-        </div>
-        <h5 class="text-center mb-5 text-monospace">Páginas</h5>
-        <div class="container">
-          <div class="card mb-4" >
+          <div class="card-body">
+            <p class="card-text">{{coment.name}}</p>
+            <p class="card-text">{{coment.message}}</p>
+          </div>
 
-            
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+
+
+

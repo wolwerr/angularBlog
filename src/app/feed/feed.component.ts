@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../service/post.service';
 import { Post } from '../model/Post';
+import { Router } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
@@ -8,29 +10,39 @@ import { Post } from '../model/Post';
 })
 export class FeedComponent implements OnInit {
 
-  posts: Post[];
-  post : Post;
+  post: Post = this.postService.getDefaultPost();
+
+  postForm = new FormGroup({
+    name: new FormControl(''),
+    message: new FormControl('')
+  });
+
+  coments: Post[];
   nome: string;
-  temp : any
-  constructor(private postService: PostService) { }
+
+
+  constructor(private postService: PostService, private router: Router) { }
+
 
   ngOnInit(): void {
     this.findPosts()
+
   }
 
   findPosts() {
     this.postService.getPosts().subscribe (data => {
-     this.temp = data['content'];
-     this.posts = this.temp
-
+      this.coments = data['content'];
     })
   }
 
-  cadastrarMensagem() {
-     this.postService.postMensagem(this.post).subscribe((data: Post) => {
-      this.post = data
-      location.assign('/feed')
+  onSubmit() {
+    const formValue = this.postForm.value;
+      this.post.name = formValue.name;
+      this.post.message = formValue.message;
+      this.postService.createPost(this.post).subscribe((result) =>{
+        alert('Comentario adicionado com sucesso');
+        window.location.reload();
       })
-  }
+  };
 
 }
