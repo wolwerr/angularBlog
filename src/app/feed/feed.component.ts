@@ -30,10 +30,12 @@ export class FeedComponent implements OnInit {
   }
 
   findPosts() {
-    this.postService.getPosts().subscribe (data => {
-      this.coments = data['content'];
+    this.postService.getPosts().subscribe((data: Post[]) => {
+      this.coments = data;
     })
   }
+
+
 
   onSubmit() {
     const formValue = this.postForm.value;
