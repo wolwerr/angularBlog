@@ -18,7 +18,7 @@ export class FeedComponent implements OnInit {
   });
 
   coments: Post[];
-  
+
   constructor(private postService: PostService, private router: Router) { }
 
 
@@ -40,7 +40,7 @@ export class FeedComponent implements OnInit {
       this.post.name = formValue.name;
       this.post.message = formValue.message;
       this.postService.createPost(this.post).subscribe((result) =>{
-        alert('Comentario adicionado com sucesso');
+        alert('Coment sented');
         window.location.reload();
       })
   };
